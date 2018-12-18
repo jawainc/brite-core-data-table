@@ -1,0 +1,308 @@
+@import './vars';
+
+// main table wrapper
+.data-table-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 33px 30px;
+    
+    .data-table {
+        width: 1170px;
+
+        // table head
+        .table-header {
+            position: relative;
+            background: $primary-color-dark;
+            display: flex;
+            justify-content: space-between;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            div {
+                align-self: center;
+                padding: 20px;
+                color: #FFFFFF;
+                font-size: 18px;
+                
+                &.search {
+                    position: relative;
+                    width: auto;
+                    .search-icon {
+                        color: $primary-color-light;
+                    }
+                    input {
+                        margin-left: 20px;
+                        background: $primary-color;
+                        border: 1px solid rgba($primary-color-light, 0.4);
+                        font-size: 18px;
+                        color: $primary-color-light;
+                        padding: 5px;
+                        border-radius: 5px;
+                        outline: none;
+                        width: 150px;
+                        &:focus {
+                            width: 220px;
+                        }
+                    }
+                }
+                
+            }
+
+            
+            
+        }
+
+        table {
+            border-collapse: collapse;
+            background: white;
+            overflow: hidden;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+
+            thead {
+                tr {
+                    height: 60px;
+                    background: $table-head-color; 
+                    @extend .shadow-6dp;
+                    th {
+                        font-size: 18px;
+                        color: $table-head-text-color;
+                        line-height: 1.2;
+                        font-weight: unset;
+                        position: relative;
+                        padding-left: 25px;
+                        text-align: left;
+                        span {
+                            position: absolute;
+                            margin-left: 10px;     
+                            cursor: pointer;
+                            color: $primary-color-light;
+                            &.sort-up {
+                               margin-top: -5px;
+                            }
+                            &.sort-down {
+                                margin-top: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+            tbody tr {
+                height: 50px;
+                font-size: 15px;
+                color: $table-body-text-color;
+                line-height: 1.2;
+                font-weight: unset;
+                border-bottom: 1px solid $border-color; 
+                &:hover {
+                   @extend .shadow-2dp;
+                }    
+                td {
+                    padding-left: 25px;
+                    text-align: left;
+                    position: relative;
+                    overflow: hidden;
+                    max-width: 250px;
+                    .head {
+                        display: none;
+                    }
+                    .f-icon {
+                        cursor: pointer;
+                        color: $primary-color-light;
+                        position: absolute;
+                        z-index: 100;
+                        left: 6px; 
+                        top: 6px;
+                        display: none;
+                    }
+                    &:hover {
+                       .f-icon {
+                           display: block;
+                       }
+                    }
+                }
+            }
+        }
+    }
+
+    // Editor
+    .editor-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #000000, $alpha: 0.7);
+        z-index: 999;
+
+        .flex-container {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .close-overlay {
+                color: #FFFFFF;
+                border: 0;
+                padding: 0;
+                width: auto;
+                background-color: transparent;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-size: 25px;
+                cursor: pointer;
+            }
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+        .flex-item {
+            margin-right: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            &:last-child {
+                margin: 0;
+            }
+
+            input {
+                background: #FFFFFF;
+                border-color: transparent;
+                padding: 10px;
+                font-size: 18px;
+                width: 450px;
+                color: $table-body-text-color;
+                border-radius: 5px;
+                &:focus {
+                    outline: none;
+                    @extend .shadow-6dp;
+                }
+            }
+
+            button {
+                position: relative;
+                padding: 12px;
+                font-size: 18px;
+                text-align: center;
+                width: 120px;
+                overflow: hidden;
+                border-width: 0;
+                outline: none;
+                border-radius: 5px;
+                background-color: $secondary-color;
+                color: #FFFFFF;
+                cursor: pointer;
+                &:hover, &:focus {
+                    background-color: darken($secondary-color, 10);
+                    @extend .shadow-6dp;
+                }
+            }
+        }
+    }
+  }
+
+  // transition
+ 
+  .bounce-enter-active {
+    animation: bounce-in .5s;
+  }
+  .bounce-leave-active {
+    animation: bounce-in .4s reverse;
+  }
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  // responsive
+  @media screen and (max-width: 992px) {
+    .data-table-wrapper {
+        padding: 0;
+    table {
+        display: block;
+        thead {
+            display: none;
+        }
+        tbody {            
+            width: 100%;
+            max-width: 100%;
+            display: block;
+
+            tr {
+                height: auto !important;
+                padding: 20px 0;
+                font-size: 14px !important;
+                width: 100% !important;
+                display: block;
+                td {
+                    padding-left: 20px;
+                    margin-bottom: 20px;
+                    display: block;
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    .head {
+                        display: table-cell !important;
+                        margin-right: 10px;
+                        font-weight: bold;
+                    }
+                    .f-icon {
+                        display: block !important;
+                        top: 0 !important;
+                    }
+                    .content {
+                        display: table-cell;
+                        padding-left: 20px;
+                        padding-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .editor-overlay {
+       
+       
+        .row {
+            display: block;
+            width: 100%;
+            justify-content: center;
+        }
+        .flex-item {
+            display: block;
+            margin-bottom: 10px;
+            margin-right: 0;
+            input {
+                width: 98%;
+            }    
+        }
+    }
+}
+  }
+
+  @media screen and (max-width: 425px) {
+  .data-table .table-header {
+      display: block !important;
+  }
+}

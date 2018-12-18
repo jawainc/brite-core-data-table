@@ -1,18 +1,57 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="data-table-container">
+    <DataTable 
+      title="Payment Data"
+      :file="filePath"
+      :file-location="fileLocation"
+      :columns='columns'
+     />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+// import DataTable component
+import DataTable from '@/components/DataTable/DataTable.vue';
 
 export default {
   name: 'home',
+  data: function () {
+    return {
+      filePath: 'https://docs.google.com/spreadsheets/d/1eBsATYdeISUGjdBr0SzNhY5Ur9mkl0u11tfhxn2Y1WE/export?format=csv&id=1eBsATYdeISUGjdBr0SzNhY5Ur9mkl0u11tfhxn2Y1WE&gid=1376887707',
+      fileLocation: 'remote',
+      // columns passed to component
+      columns: [
+        {
+          name: 'Name',
+          sort: true,
+          edit: true,
+          type: 'string'
+        },
+        {
+          name: 'Description',
+          sort: true,
+          edit: true,
+          type: 'string'
+        },
+        {
+          name: 'Date',
+          sort: false,
+          edit: false,
+          type: 'date'
+        },
+        {
+          name: 'Amount',
+          sort: false,
+          edit: false,
+          type: 'currency',
+          symbol: '$'
+        }
+      ]
+    }
+  },
   components: {
-    HelloWorld
+    // define component
+    DataTable
   }
 }
 </script>
