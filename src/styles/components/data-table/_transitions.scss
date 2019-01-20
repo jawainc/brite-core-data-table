@@ -1,0 +1,7 @@
+// transition
+ .bounce-enter-active {
+    animation: bounce-in .5s;
+  }
+  .bounce-leave-active {
+    animation: bounce-in .4s reverse;
+  }

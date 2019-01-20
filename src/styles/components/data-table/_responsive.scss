@@ -1,0 +1,65 @@
+// responsive
+@media screen and (max-width: 992px) {
+    .data-table-wrapper {
+        padding: 0;
+    }
+    .data-table__table {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+    }
+    .table__head {
+        display: none;
+    }
+    .table__body {
+        display: block;
+    }
+    .table__body__row {
+        height: auto;
+        padding: 20px 0;
+        font-size: 14px;
+        width: 100%;
+        display: block;
+    }
+    .body__row__column {
+        padding-left: 40px;
+        margin-bottom: 20px;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+    }
+    .row__column__content-head {
+        display: table-cell;
+        margin-right: 10px;
+        font-weight: bold;
+    }
+    .row__column__content {
+        display: table-cell;
+        padding-left: 20px;
+        padding-right: 10px;
+    }
+    .row__column__f-icon {
+        display: block;
+        top: 0;
+    }
+    .overlay-container-row {
+        display: block;
+        width: 100%;
+        justify-content: center;
+    }
+    .overlay-container-row__flex-item {
+        display: block;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+    .flex-item__input {
+        width: 98%;
+    }
+    
+}
+
+@media screen and (max-width: 425px) {
+    .data-table__header {
+      display: block;
+  }
+}

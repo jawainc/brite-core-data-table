@@ -35,14 +35,14 @@ export default {
         },
         {
           name: 'Date',
-          sort: false,
-          edit: false,
+          sort: true,
+          edit: true,
           type: 'date'
         },
         {
           name: 'Amount',
-          sort: false,
-          edit: false,
+          sort: true,
+          edit: true,
           type: 'currency',
           symbol: '$'
         }

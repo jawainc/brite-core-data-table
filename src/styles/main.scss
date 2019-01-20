@@ -15,4 +15,9 @@ html, body {
     margin: 0 auto;
     background-color: lightgrey;
 }
+
+@import './components/data-table/vars.scss';
+@import './components/data-table/key-frames.scss';
+@import './components/data-table/transitions.scss';
 @import './components/data-table/data-table.scss';
+@import './components/data-table/responsive.scss';
