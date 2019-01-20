@@ -38,8 +38,11 @@ data: function () {
 ```
 options for column property
 * `name: string` name of column
+
 * `sort: boolean` will set column to sortable 
+
 * `edit: boolean` will set column vale editable
+
 * `type: string` only type 'date' is available. setting this type will filter column value as Date
 
 In Template section of vue file, add tag like this:
@@ -57,8 +60,11 @@ In Template section of vue file, add tag like this:
 ```
 attributes for DataTable
 * `title:string` tile to appear on top of table
+
 * `file:string` file path to load from
+
 * `file-location:string` value are 'remote' or 'local', only remote will work now
+
 * `columns:object` columns properties/options
 
 # Project setup
