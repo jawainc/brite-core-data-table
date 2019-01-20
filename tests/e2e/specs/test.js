@@ -15,14 +15,14 @@ module.exports = {
         this.assert.equal(result.value, '220px');
       })
       .click('table tbody tr:first-child td:first-child')
-      .waitForElementVisible('table tbody tr:first-child td:first-child .f-icon', 1000)
-      .click('table tbody tr:first-child td:first-child .f-icon')
+      .waitForElementVisible('table tbody tr:first-child td:first-child .row__column__f-icon', 1000)
+      .click('table tbody tr:first-child td:first-child .row__column__f-icon')
       .waitForElementVisible('.editor-overlay', 1000)
       .isVisible('.editor-overlay', function(result) {
         this.assert.equal(result.value, true);
       })
       .pause(1000)
-      .click('.close-overlay')
+      .click('.editor-overlay__close')
       .waitForElementNotPresent('.editor-overlay', 1000)
       .pause(500)
       .end()
