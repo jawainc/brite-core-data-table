@@ -1,5 +1,3 @@
-# brite-core
-
 ## How to use data table component ?
 import component in vue file
 ```
@@ -124,15 +122,6 @@ npm run build
 ```
 this will place all build files in /dist folder at root of the project. Copy all files and folders to deployment server. index.html file is included so accessing server will run the project in browser.
 
-### Time Spent
-* 18 hours
-
 ### Improvements
 * for editing, different input types can be used based on column types. e.g select, dates, textarea
 * paging could be added
-
-### How it would be used
-best approach would be to make it as vue plugin. Now it has to be imported where its needed
-
-### Learn any new css property
-`box-sizing: border-box;` width you set is the width you get  
